@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://ddewaele.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Github | My Octopress Blog]]></title>
+  <link href="http://ddewaele.github.io/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://ddewaele.github.io/"/>
   <updated>2014-05-10T14:25:54+02:00</updated>
   <id>http://ddewaele.github.io/</id>
