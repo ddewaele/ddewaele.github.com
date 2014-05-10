@@ -268,5 +268,6 @@ In order to commit the source code to your blog
 # References
 
 - http://octopress.org/docs/setup/
-
+- http://octopress.org/docs/deploying/github/
+- http://octopress.org/docs/configuring/
 
