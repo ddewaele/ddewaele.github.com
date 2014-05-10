@@ -88,65 +88,11 @@ So when I ran ```rake deploy``` it seems to run fine at first but i got the foll
     [master de754e5] Site updated at 2014-05-10 09:54:27 UTC
      61 files changed, 1118 insertions(+), 1 deletions(-)
      create mode 100644 assets/jwplayer/glow/controlbar/background.png
-     create mode 100644 assets/jwplayer/glow/controlbar/blankButton.png
-     create mode 100644 assets/jwplayer/glow/controlbar/divider.png
-     create mode 100644 assets/jwplayer/glow/controlbar/fullscreenButton.png
-     create mode 100644 assets/jwplayer/glow/controlbar/fullscreenButtonOver.png
-     create mode 100644 assets/jwplayer/glow/controlbar/muteButton.png
-     create mode 100644 assets/jwplayer/glow/controlbar/muteButtonOver.png
-     create mode 100644 assets/jwplayer/glow/controlbar/normalscreenButton.png
-     create mode 100644 assets/jwplayer/glow/controlbar/normalscreenButtonOver.png
-     create mode 100644 assets/jwplayer/glow/controlbar/pauseButton.png
-     create mode 100644 assets/jwplayer/glow/controlbar/pauseButtonOver.png
-     create mode 100644 assets/jwplayer/glow/controlbar/playButton.png
-     create mode 100644 assets/jwplayer/glow/controlbar/playButtonOver.png
-     create mode 100644 assets/jwplayer/glow/controlbar/timeSliderBuffer.png
-     create mode 100644 assets/jwplayer/glow/controlbar/timeSliderCapLeft.png
-     create mode 100644 assets/jwplayer/glow/controlbar/timeSliderCapRight.png
-     create mode 100644 assets/jwplayer/glow/controlbar/timeSliderProgress.png
-     create mode 100644 assets/jwplayer/glow/controlbar/timeSliderRail.png
-     create mode 100644 assets/jwplayer/glow/controlbar/unmuteButton.png
-     create mode 100644 assets/jwplayer/glow/controlbar/unmuteButtonOver.png
-     create mode 100644 assets/jwplayer/glow/display/background.png
-     create mode 100644 assets/jwplayer/glow/display/bufferIcon.png
-     create mode 100644 assets/jwplayer/glow/display/muteIcon.png
-     create mode 100644 assets/jwplayer/glow/display/playIcon.png
-     create mode 100644 assets/jwplayer/glow/dock/button.png
-     create mode 100644 assets/jwplayer/glow/glow.xml
-     create mode 100644 assets/jwplayer/glow/playlist/item.png
-     create mode 100644 assets/jwplayer/glow/playlist/itemOver.png
-     create mode 100644 assets/jwplayer/glow/playlist/sliderCapBottom.png
-     create mode 100644 assets/jwplayer/glow/playlist/sliderCapTop.png
-     create mode 100644 assets/jwplayer/glow/playlist/sliderRail.png
-     create mode 100644 assets/jwplayer/glow/playlist/sliderThumb.png
-     create mode 100644 assets/jwplayer/glow/sharing/embedIcon.png
-     create mode 100644 assets/jwplayer/glow/sharing/embedScreen.png
-     create mode 100644 assets/jwplayer/glow/sharing/shareIcon.png
-     create mode 100644 assets/jwplayer/glow/sharing/shareScreen.png
-     create mode 100644 assets/jwplayer/player.swf
-     create mode 100644 atom.xml
-     create mode 100644 blog/archives/index.html
-     create mode 100644 favicon.png
-     create mode 100644 images/bird_32_gray.png
-     create mode 100644 images/bird_32_gray_fail.png
-     create mode 100644 images/code_bg.png
-     create mode 100644 images/dotted-border.png
-     create mode 100644 images/email.png
-     create mode 100644 images/line-tile.png
-     create mode 100644 images/noise.png
-     create mode 100644 images/rss.png
+     ...
      create mode 100644 images/search.png
      rewrite index.html (100%)
      create mode 100644 javascripts/github.js
-     create mode 100644 javascripts/libs/jXHR.js
-     create mode 100644 javascripts/libs/jquery.min.js
-     create mode 100644 javascripts/libs/swfobject-dynamic.js
-     create mode 100644 javascripts/modernizr-2.0.js
-     create mode 100644 javascripts/octopress.js
-     create mode 100644 javascripts/pinboard.js
-     create mode 100644 javascripts/twitter.js
-     create mode 100644 robots.txt
-     create mode 100644 sitemap.xml
+     ...
      create mode 100644 stylesheets/screen.css
     
     ## Pushing generated _deploy website
@@ -205,21 +151,20 @@ You'll notice when doing a ```git status``` that octopress has created a git rep
 
 git status
 
-# On branch source
-# Changes not staged for commit:
-#   (use "git add <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discard changes in working directory)
-#
-#   modified:   Rakefile
-#   modified:   _config.yml
-#
-# Untracked files:
-#   (use "git add <file>..." to include in what will be committed)
-#
-#   sass/
-#   source/
-no changes added to commit (use "git add" and/or "git commit -a")
-
+    # On branch source
+    # Changes not staged for commit:
+    #   (use "git add <file>..." to update what will be committed)
+    #   (use "git checkout -- <file>..." to discard changes in working directory)
+    #
+    #   modified:   Rakefile
+    #   modified:   _config.yml
+    #
+    # Untracked files:
+    #   (use "git add <file>..." to include in what will be committed)
+    #
+    #   sass/
+    #   source/
+    no changes added to commit (use "git add" and/or "git commit -a")
 
 It has setup a gitignore file to ensure that your deploy folder doesn't get deployed to github pages.
  
