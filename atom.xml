@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://ddewaele.github.io/atom.xml" rel="self"/>
   <link href="http://ddewaele.github.io/"/>
-  <updated>2014-05-10T14:25:54+02:00</updated>
+  <updated>2014-05-10T14:27:06+02:00</updated>
   <id>http://ddewaele.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -289,6 +289,8 @@ Merge the remote changes (e.g. 'git pull') before pushing again.  See the
 
 <ul>
 <li><a href="http://octopress.org/docs/setup/">http://octopress.org/docs/setup/</a></li>
+<li><a href="http://octopress.org/docs/deploying/github/">http://octopress.org/docs/deploying/github/</a></li>
+<li><a href="http://octopress.org/docs/configuring/">http://octopress.org/docs/configuring/</a></li>
 </ul>
 
 ]]></content>
