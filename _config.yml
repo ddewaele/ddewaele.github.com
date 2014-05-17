@@ -3,9 +3,9 @@
 # ----------------------- #
 
 url: http://ddewaele.github.io
-title: My Octopress Blog
-#subtitle: A blogging framework for hackers.
-author: Your Name
+title: My technology blog. 
+subtitle: I blog about Java, JavaScript, Android, iOS development, IoT, M2M, ...
+author: Your Davy De Waele
 simple_search: https://www.google.com/search
 description:
 
