@@ -7,7 +7,14 @@ categories:
 author: Davy De Waele
 categories: [Github, Jekyll, Octopress]
 ---
-# Follow instructions
+
+In this blog post I'll show you how to setup octopress on your blog. In this article we'll use Github pages to deploy our target. The goal of the article is to provide you with an overview on how Octopress can be setup and get you started very quickly.
+<!-- more -->
+
+## Follow instructions
+
+The first thing you need to is ```install``` octopress. In order to do that you simply clone the octopress repository and execute a couple of commands on it.
+
 
 - git clone git://github.com/imathis/octopress.git octopress
 - cd octopress/
@@ -16,10 +23,32 @@ categories: [Github, Jekyll, Octopress]
 - bundle install
 - rake install
 
-# Previewing
+At this point your blog is installed.
 
-- rake preview
+## Previewing
 
+You can already preview your blog by executing the ```rake preview``` command. After executing the command you should see the following output 
+
+    Starting to watch source with Jekyll and Compass. Starting Rack on port 4000
+    Configuration from /Users/ddewaele/octopress/octopress/_config.yml
+    [2014-05-17 11:34:54] INFO  WEBrick 1.3.1
+    [2014-05-17 11:34:54] INFO  ruby 1.9.3 (2013-06-27) [x86_64-darwin11.4.2]
+    [2014-05-17 11:34:54] INFO  WEBrick::HTTPServer#start: pid=14603 port=4000
+    Auto-regenerating enabled: source -> public
+    [2014-05-17 11:34:54] regeneration: 94 files changed
+    >>> Change detected at 11:34:54 to: screen.scss
+    identical public/stylesheets/screen.css 
+
+    Dear developers making use of FSSM in your projects,
+    FSSM is essentially dead at this point. Further development will
+    be taking place in the new shared guard/listen project. Please
+    let us know if you need help transitioning! ^_^b
+    - Travis Tilley
+
+    >>> Compass is watching for changes. Press Ctrl-C to Stop.
+
+
+After that you can preview your blog at http://localhost:4000
 
 # Deploying
 
@@ -265,9 +294,31 @@ In order to commit the source code to your blog
     'Note about fast-forwards' section of 'git push --help' for details.
 
 
+## Themes
+
+If you want to install a theme you can use the ```rake install [theme]``` command.
+
+For example, to re-install the ```classic``` theme you can execute ```rake install classic```.
+
+
+    A theme is already installed, proceeding will overwrite existing files. Are you sure? [y/n] y
+    ## Copying classic theme into ./source and ./sass
+    mkdir -p source
+    cp -r .themes/classic/source/. source
+    mkdir -p sass
+    cp -r .themes/classic/sass/. sass
+    mkdir -p source/_posts
+    mkdir -p public
+    rake aborted!
+    Don't know how to build task 'classic'
+
+    (See full trace by running task with --trace)
+
+
 # References
 
 - http://octopress.org/docs/setup/
 - http://octopress.org/docs/deploying/github/
 - http://octopress.org/docs/configuring/
 
+- https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes
