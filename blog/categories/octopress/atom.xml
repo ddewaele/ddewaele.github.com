@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Octopress | My Octopress Blog]]></title>
+  <title><![CDATA[Category: Octopress | My technology blog.]]></title>
   <link href="http://ddewaele.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://ddewaele.github.io/"/>
-  <updated>2014-05-10T18:19:22+02:00</updated>
+  <updated>2014-05-19T08:42:53+02:00</updated>
   <id>http://ddewaele.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Your Davy De Waele]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -18,7 +18,14 @@
     <link href="http://ddewaele.github.io/blog/2014/05/10/setting-up-my-octopress-blog-on-github-pages/"/>
     <updated>2014-05-10T13:28:14+02:00</updated>
     <id>http://ddewaele.github.io/blog/2014/05/10/setting-up-my-octopress-blog-on-github-pages</id>
-    <content type="html"><![CDATA[<h1>Follow instructions</h1>
+    <content type="html"><![CDATA[<p>In this blog post I&rsquo;ll show you how to setup octopress on your blog. In this article we&rsquo;ll use Github pages to deploy our target. The goal of the article is to provide you with an overview on how Octopress can be setup and get you started very quickly.</p>
+
+<!-- more -->
+
+
+<h2>Follow instructions</h2>
+
+<p>The first thing you need to is <code>install</code> octopress. In order to do that you simply clone the octopress repository and execute a couple of commands on it.</p>
 
 <ul>
 <li>git clone git://github.com/imathis/octopress.git octopress</li>
@@ -30,12 +37,32 @@
 </ul>
 
 
-<h1>Previewing</h1>
+<p>At this point your blog is installed.</p>
 
-<ul>
-<li>rake preview</li>
-</ul>
+<h2>Previewing</h2>
 
+<p>You can already preview your blog by executing the <code>rake preview</code> command. After executing the command you should see the following output</p>
+
+<pre><code>Starting to watch source with Jekyll and Compass. Starting Rack on port 4000
+Configuration from /Users/ddewaele/octopress/octopress/_config.yml
+[2014-05-17 11:34:54] INFO  WEBrick 1.3.1
+[2014-05-17 11:34:54] INFO  ruby 1.9.3 (2013-06-27) [x86_64-darwin11.4.2]
+[2014-05-17 11:34:54] INFO  WEBrick::HTTPServer#start: pid=14603 port=4000
+Auto-regenerating enabled: source -&gt; public
+[2014-05-17 11:34:54] regeneration: 94 files changed
+&gt;&gt;&gt; Change detected at 11:34:54 to: screen.scss
+identical public/stylesheets/screen.css 
+
+Dear developers making use of FSSM in your projects,
+FSSM is essentially dead at this point. Further development will
+be taking place in the new shared guard/listen project. Please
+let us know if you need help transitioning! ^_^b
+- Travis Tilley
+
+&gt;&gt;&gt; Compass is watching for changes. Press Ctrl-C to Stop.
+</code></pre>
+
+<p>After that you can preview your blog at <a href="http://localhost:4000">http://localhost:4000</a></p>
 
 <h1>Deploying</h1>
 
@@ -285,12 +312,33 @@ Merge the remote changes (e.g. 'git pull') before pushing again.  See the
 'Note about fast-forwards' section of 'git push --help' for details.
 </code></pre>
 
+<h2>Themes</h2>
+
+<p>If you want to install a theme you can use the <code>rake install [theme]</code> command.</p>
+
+<p>For example, to re-install the <code>classic</code> theme you can execute <code>rake install classic</code>.</p>
+
+<pre><code>A theme is already installed, proceeding will overwrite existing files. Are you sure? [y/n] y
+## Copying classic theme into ./source and ./sass
+mkdir -p source
+cp -r .themes/classic/source/. source
+mkdir -p sass
+cp -r .themes/classic/sass/. sass
+mkdir -p source/_posts
+mkdir -p public
+rake aborted!
+Don't know how to build task 'classic'
+
+(See full trace by running task with --trace)
+</code></pre>
+
 <h1>References</h1>
 
 <ul>
 <li><a href="http://octopress.org/docs/setup/">http://octopress.org/docs/setup/</a></li>
 <li><a href="http://octopress.org/docs/deploying/github/">http://octopress.org/docs/deploying/github/</a></li>
-<li><a href="http://octopress.org/docs/configuring/">http://octopress.org/docs/configuring/</a></li>
+<li><p><a href="http://octopress.org/docs/configuring/">http://octopress.org/docs/configuring/</a></p></li>
+<li><p><a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes</a></p></li>
 </ul>
 
 ]]></content>

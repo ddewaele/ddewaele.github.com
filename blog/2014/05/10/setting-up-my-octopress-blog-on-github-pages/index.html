@@ -5,16 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Setting Up My Octopress Blog on Github Pages - My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+  <title>Setting Up My Octopress Blog on Github Pages - My technology blog.</title>
+  <meta name="author" content="Your Davy De Waele">
 
   
-  <meta name="description" content="Follow instructions git clone git://github.com/imathis/octopress.git octopress
-cd octopress/
-gem install bundler
-rbenv rehash
-bundle install
-rake &hellip;">
+  <meta name="description" content="In this blog post I&rsquo;ll show you how to setup octopress on your blog. In this article we&rsquo;ll use Github pages to deploy our target. The &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -26,7 +21,7 @@ rake &hellip;">
   <link rel="canonical" href="http://ddewaele.github.io/blog/2014/05/10/setting-up-my-octopress-blog-on-github-pages">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="My technology blog." type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -34,12 +29,21 @@ rake &hellip;">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
 
   
 
 </head>
 
 <body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My technology blog.</a></h1>
+  
+    <h2>I blog about Java, JavaScript, Android, iOS development, IoT, M2M, ...</h2>
+  
+</hgroup>
+
+</header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
   <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
   
@@ -53,15 +57,8 @@ rake &hellip;">
 </form>
   
 <ul class="main-navigation">
-    <li><a href="/">
-        <span class="blue_light">
-            My Octopress Blog
-        </span>
-       
-    </a></li>
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/about">About me</a></li>
 </ul>
 
 </nav>
@@ -98,7 +95,14 @@ rake &hellip;">
   </header>
 
 
-<div class="entry-content"><h1>Follow instructions</h1>
+<div class="entry-content"><p>In this blog post I&rsquo;ll show you how to setup octopress on your blog. In this article we&rsquo;ll use Github pages to deploy our target. The goal of the article is to provide you with an overview on how Octopress can be setup and get you started very quickly.</p>
+
+<!-- more -->
+
+
+<h2>Follow instructions</h2>
+
+<p>The first thing you need to is <code>install</code> octopress. In order to do that you simply clone the octopress repository and execute a couple of commands on it.</p>
 
 <ul>
 <li>git clone git://github.com/imathis/octopress.git octopress</li>
@@ -110,12 +114,32 @@ rake &hellip;">
 </ul>
 
 
-<h1>Previewing</h1>
+<p>At this point your blog is installed.</p>
 
-<ul>
-<li>rake preview</li>
-</ul>
+<h2>Previewing</h2>
 
+<p>You can already preview your blog by executing the <code>rake preview</code> command. After executing the command you should see the following output</p>
+
+<pre><code>Starting to watch source with Jekyll and Compass. Starting Rack on port 4000
+Configuration from /Users/ddewaele/octopress/octopress/_config.yml
+[2014-05-17 11:34:54] INFO  WEBrick 1.3.1
+[2014-05-17 11:34:54] INFO  ruby 1.9.3 (2013-06-27) [x86_64-darwin11.4.2]
+[2014-05-17 11:34:54] INFO  WEBrick::HTTPServer#start: pid=14603 port=4000
+Auto-regenerating enabled: source -&gt; public
+[2014-05-17 11:34:54] regeneration: 94 files changed
+&gt;&gt;&gt; Change detected at 11:34:54 to: screen.scss
+identical public/stylesheets/screen.css 
+
+Dear developers making use of FSSM in your projects,
+FSSM is essentially dead at this point. Further development will
+be taking place in the new shared guard/listen project. Please
+let us know if you need help transitioning! ^_^b
+- Travis Tilley
+
+&gt;&gt;&gt; Compass is watching for changes. Press Ctrl-C to Stop.
+</code></pre>
+
+<p>After that you can preview your blog at <a href="http://localhost:4000">http://localhost:4000</a></p>
 
 <h1>Deploying</h1>
 
@@ -365,12 +389,33 @@ Merge the remote changes (e.g. 'git pull') before pushing again.  See the
 'Note about fast-forwards' section of 'git push --help' for details.
 </code></pre>
 
+<h2>Themes</h2>
+
+<p>If you want to install a theme you can use the <code>rake install [theme]</code> command.</p>
+
+<p>For example, to re-install the <code>classic</code> theme you can execute <code>rake install classic</code>.</p>
+
+<pre><code>A theme is already installed, proceeding will overwrite existing files. Are you sure? [y/n] y
+## Copying classic theme into ./source and ./sass
+mkdir -p source
+cp -r .themes/classic/source/. source
+mkdir -p sass
+cp -r .themes/classic/sass/. sass
+mkdir -p source/_posts
+mkdir -p public
+rake aborted!
+Don't know how to build task 'classic'
+
+(See full trace by running task with --trace)
+</code></pre>
+
 <h1>References</h1>
 
 <ul>
 <li><a href="http://octopress.org/docs/setup/">http://octopress.org/docs/setup/</a></li>
 <li><a href="http://octopress.org/docs/deploying/github/">http://octopress.org/docs/deploying/github/</a></li>
-<li><a href="http://octopress.org/docs/configuring/">http://octopress.org/docs/configuring/</a></li>
+<li><p><a href="http://octopress.org/docs/configuring/">http://octopress.org/docs/configuring/</a></p></li>
+<li><p><a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes</a></p></li>
 </ul>
 
 </div>
@@ -488,7 +533,7 @@ Merge the remote changes (e.g. 'git pull') before pushing again.  See the
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Your Name -
+  Copyright &copy; 2014 - Your Davy De Waele -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
