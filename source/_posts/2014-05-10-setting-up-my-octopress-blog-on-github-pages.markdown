@@ -29,24 +29,137 @@ At this point your blog is installed.
 
 You can already preview your blog by executing the ```rake preview``` command. After executing the command you should see the following output 
 
-    Starting to watch source with Jekyll and Compass. Starting Rack on port 4000
-    Configuration from /Users/ddewaele/octopress/octopress/_config.yml
-    [2014-05-17 11:34:54] INFO  WEBrick 1.3.1
-    [2014-05-17 11:34:54] INFO  ruby 1.9.3 (2013-06-27) [x86_64-darwin11.4.2]
-    [2014-05-17 11:34:54] INFO  WEBrick::HTTPServer#start: pid=14603 port=4000
-    Auto-regenerating enabled: source -> public
-    [2014-05-17 11:34:54] regeneration: 94 files changed
-    >>> Change detected at 11:34:54 to: screen.scss
-    identical public/stylesheets/screen.css 
+Test Ruby
 
-    Dear developers making use of FSSM in your projects,
-    FSSM is essentially dead at this point. Further development will
-    be taking place in the new shared guard/listen project. Please
-    let us know if you need help transitioning! ^_^b
-    - Travis Tilley
+``` ruby Discover if a number is prime http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/ Source Article linenos:false
+class Fixnum
+  def prime?
+    ('1' * self) !~ /^1?$|^(11+?)\1+$/
+  end
+end
+```
 
-    >>> Compass is watching for changes. Press Ctrl-C to Stop.
+Test java
 
+``` java
+package com.mkyong.io;
+ 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+ 
+public class BufferedReaderExample {
+ 
+    public static void main(String[] args) {
+ 
+        BufferedReader br = null;
+ 
+        try {
+ 
+            String sCurrentLine;
+ 
+            br = new BufferedReader(new FileReader("C:\\testing.txt"));
+ 
+            while ((sCurrentLine = br.readLine()) != null) {
+                System.out.println(sCurrentLine);
+            }
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (br != null)br.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+ 
+    }
+}
+```
+
+Test gist
+
+{% gist 28e219162e020c2a7126 %}
+
+
+Test gist2
+
+{% gist 1d14aabee41138e97079 %}
+
+
+
+Test code
+
+``` coffeescript Coffeescript http://www.google.com link Tricks start:1 mark:3,4
+Starting to watch source with Jekyll and Compass. Starting Rack on port 4000
+Configuration from /Users/ddewaele/octopress/octopress/_config.yml
+[2014-05-17 11:34:54] INFO  WEBrick 1.3.1
+[2014-05-17 11:34:54] INFO  ruby 1.9.3 (2013-06-27) [x86_64-darwin11.4.2]
+[2014-05-17 11:34:54] INFO  WEBrick::HTTPServer#start: pid=14603 port=4000
+Auto-regenerating enabled: source -> public
+[2014-05-17 11:34:54] regeneration: 94 files changed
+>>> Change detected at 11:34:54 to: screen.scss
+identical public/stylesheets/screen.css 
+
+Dear developers making use of FSSM in your projects,
+FSSM is essentially dead at this point. Further development will
+be taking place in the new shared guard/listen project. Please
+let us know if you need help transitioning! ^_^b
+- Travis Tilley
+
+>>> Compass is watching for changes. Press Ctrl-C to Stop.
+```
+
+Test 2 
+
+``` coffeescript Coffeescript Tricks start:51 mark:52,54-55
+# Given an alphabet:
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+# Iterate over part of the alphabet:
+console.log letter for letter in alphabet[4..8]
+```
+
+
+Test 3
+
+<pre>
+package com.mkyong.io;
+ 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+ 
+public class BufferedReaderExample {
+ 
+    public static void main(String[] args) {
+ 
+        BufferedReader br = null;
+ 
+        try {
+ 
+            String sCurrentLine;
+ 
+            br = new BufferedReader(new FileReader("C:\\testing.txt"));
+ 
+            while ((sCurrentLine = br.readLine()) != null) {
+                System.out.println(sCurrentLine);
+            }
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (br != null)br.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+ 
+    }
+}
+</pre>
 
 After that you can preview your blog at http://localhost:4000
 
@@ -293,6 +406,21 @@ In order to commit the source code to your blog
     Merge the remote changes (e.g. 'git pull') before pushing again.  See the
     'Note about fast-forwards' section of 'git push --help' for details.
 
+## Pages
+
+### Creating new pages
+
+In order to create a new page we execute the ```rake new_page``` command
+
+``` text
+rake new_page["about"]
+
+mkdir -p source/about
+Creating new page: source/about/index.markdown
+```
+
+
+source/_includes/custom/navigation.html
 
 ## Themes
 
@@ -300,7 +428,7 @@ If you want to install a theme you can use the ```rake install [theme]``` comman
 
 For example, to re-install the ```classic``` theme you can execute ```rake install classic```.
 
-
+``` text
     A theme is already installed, proceeding will overwrite existing files. Are you sure? [y/n] y
     ## Copying classic theme into ./source and ./sass
     mkdir -p source
@@ -313,7 +441,25 @@ For example, to re-install the ```classic``` theme you can execute ```rake insta
     Don't know how to build task 'classic'
 
     (See full trace by running task with --trace)
+```
 
+rake install['readify']
+
+## Updating a theme
+
+``` text
+Davys-MacBook-Air:readify ddewaele$ git pull origin master
+From https://github.com/vladigleba/readify
+ * branch            master     -> FETCH_HEAD
+Updating dd00471..e1792cc
+Fast-forward
+ sass/custom/_styles.scss          |   20 +++++++++++++-------
+ source/_includes/custom/head.html |    4 ++++
+ source/favicon.png                |  Bin 400 -> 0 bytes
+ 3 files changed, 17 insertions(+), 7 deletions(-)
+ create mode 100644 source/_includes/custom/head.html
+ delete mode 100644 source/favicon.png
+```
 
 # References
 
@@ -322,3 +468,6 @@ For example, to re-install the ```classic``` theme you can execute ```rake insta
 - http://octopress.org/docs/configuring/
 
 - https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes
+
+http://devspade.com/blog/2013/08/06/fixing-gist-embeds-in-octopress/
+https://github.com/vladigleba/readify
